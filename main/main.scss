@@ -1,171 +1,170 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 
 $colors: (
-    primary-pale: hsl(225, 100%, 94%),
-    primary-bright: hsl(245, 75%, 52%),
-    neutral-very-pale: hsl(225, 100%, 98%),
-    neutral-desaturated: hsl(224, 23%, 55%),
-    neutral-saturated: hsl(245, 83%, 68%),
-    neutral-dark: hsl(223, 47%, 23%),
-
+  primary-pale: hsl(225, 100%, 94%),
+  primary-bright: hsl(245, 75%, 52%),
+  neutral-very-pale: hsl(225, 100%, 98%),
+  neutral-desaturated: hsl(224, 23%, 55%),
+  neutral-saturated: hsl(245, 83%, 68%),
+  neutral-dark: hsl(223, 47%, 23%),
 );
 
 $borders: 15px;
 
-@function color($color-name){
-    @return map-get($colors, $color-name);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
 }
 
 @mixin desktop {
-    @media (min-width: 850px) {
-        @content
-    }
-    
+  @media (min-width: 850px) {
+    @content;
+  }
 }
 
 html,
-body{
-    margin: 0;
-    padding: 0;
-    background-color: color(primary-pale);
-    font-family: 'Red Hat Display', sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: color(primary-pale);
+  font-family: "Red Hat Display", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
 
-    .background-pattern-desktop{
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        z-index: -1;
-        display: none;
-        
-        @include desktop{
-            display: block;
-        }
+  .background-pattern-desktop {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+    display: none;
+
+    @include desktop {
+      display: block;
     }
-    
-    .background-pattern-mobile{
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        z-index: -1;
-       
-        @include desktop{
-            display: none;
-        }
+  }
+
+  .background-pattern-mobile {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+
+    @include desktop {
+      display: none;
     }
+  }
 }
 
-main{
-    .card-container{
-        background-color: white;
+main {
+  .card-container {
+    background-color: white;
+    width: 350px;
+    height: fit-content;
+    display: grid;
+    grid-template-rows: auto 2fr;
+    grid-template-areas:
+      ""
+      "image text";
+    border-radius: $borders;
+
+    .image-box {
+      img {
         width: 350px;
-        height: 90vh;
-        display: grid;
-        grid-template-rows: auto 2fr;
-        grid-template-areas: 
-        ""
-        "image text";
-        border-radius: $borders;
-        
-        .image-box{
-            img{
-                width:350px;
-                border-top-right-radius: $borders;
-                border-top-left-radius: $borders;
-            }
-        }
-
-        .summary-box{
-            padding: 0 1em 1em;
-            text-align: center;
-
-            .summary{
-                h1{
-                    color: color(neutral-dark);
-                    font-weight: 900;
-                    font-size: 1.7em;
-                }
-
-                p{
-                    color: color(neutral-desaturated);
-                    padding: 0.4em 1.5em;
-                }
-            }
-
-            .payment{
-                width: 100%;
-                
-                .plan-details{
-                    background-color: color(neutral-very-pale);
-                    border-radius: $borders;
-                    padding: 1em;
-                    display: flex;
-                    align-items: center;
-                    // justify-content: space-between;
-
-                    .price{
-                        margin-left: 1.5em;
-                        h3{
-                            margin: 0;
-                            font-weight: 900;
-                            color: color(neutral-dark);
-                            text-align: start;
-                            font-size: 1em;
-                        }
-                        
-                        p{
-                            margin: 0;
-                            color: color(neutral-desaturated);
-                            text-align: start;
-                            font-size: 1em;
-                        }
-                    }
-
-                    a{
-                        margin-left: auto;
-                        font-weight: 700;
-                        color: color(primary-bright);
-                        text-decoration: underline;
-                    }
-
-                    a:hover{
-                        color: color(neutral-saturated);
-                    }
-                }
-
-                .payment-btn{
-                    background-color: color(primary-bright);
-                    padding: 1em;
-                    border-radius: $borders;
-                    margin: 2em 0;
-                    box-shadow: 0px 10px 15px 7px color(primary-pale);
-
-                    a{
-                        color: white;
-                        font-weight: 900;
-                        text-decoration: none;
-                    }
-                }
-
-                .payment-btn:hover{
-                    background-color: color(neutral-saturated);
-                }
-
-                a{
-                    color: color(neutral-desaturated);
-                    font-weight: 900;
-                    text-decoration: none;
-                }
-
-                a:hover{
-                    color: color(neutral-dark);
-                }
-            }
-        }
+        border-top-right-radius: $borders;
+        border-top-left-radius: $borders;
+      }
     }
-}
 
+    .summary-box {
+      padding: 0 1em 1em;
+      text-align: center;
+      margin-bottom: 1em;
+
+      .summary {
+        h1 {
+          color: color(neutral-dark);
+          font-weight: 900;
+          font-size: 1.7em;
+        }
+
+        p {
+          color: color(neutral-desaturated);
+          padding: 0.4em 1.5em;
+        }
+      }
+
+      .payment {
+        width: 100%;
+
+        .plan-details {
+          background-color: color(neutral-very-pale);
+          border-radius: $borders;
+          padding: 1em;
+          display: flex;
+          align-items: center;
+          // justify-content: space-between;
+
+          .price {
+            margin-left: 1.5em;
+            h3 {
+              margin: 0;
+              font-weight: 900;
+              color: color(neutral-dark);
+              text-align: start;
+              font-size: 1em;
+            }
+
+            p {
+              margin: 0;
+              color: color(neutral-desaturated);
+              text-align: start;
+              font-size: 1em;
+            }
+          }
+
+          a {
+            margin-left: auto;
+            font-weight: 700;
+            color: color(primary-bright);
+            text-decoration: underline;
+          }
+
+          a:hover {
+            color: color(neutral-saturated);
+          }
+        }
+
+        .payment-btn {
+          background-color: color(primary-bright);
+          padding: 1em;
+          border-radius: $borders;
+          margin: 2em 0;
+          box-shadow: 0px 10px 15px 7px color(primary-pale);
+
+          a {
+            color: white;
+            font-weight: 900;
+            text-decoration: none;
+          }
+        }
+
+        .payment-btn:hover {
+          background-color: color(neutral-saturated);
+        }
+
+        a {
+          color: color(neutral-desaturated);
+          font-weight: 900;
+          text-decoration: none;
+          margin: 1em;
+        }
+      }
+
+      .payment > a:hover {
+        color: color(neutral-dark);
+      }
+    }
+  }
+}

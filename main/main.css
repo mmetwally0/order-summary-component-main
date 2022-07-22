@@ -42,7 +42,9 @@ body .background-pattern-mobile {
 main .card-container {
   background-color: white;
   width: 350px;
-  height: 90vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: grid;
   grid-template-rows: auto 2fr;
   grid-template-areas: "" "image text";
@@ -56,6 +58,7 @@ main .card-container .image-box img {
 main .card-container .summary-box {
   padding: 0 1em 1em;
   text-align: center;
+  margin-bottom: 1em;
 }
 main .card-container .summary-box .summary h1 {
   color: hsl(223deg, 47%, 23%);
@@ -120,7 +123,8 @@ main .card-container .summary-box .payment a {
   color: hsl(224deg, 23%, 55%);
   font-weight: 900;
   text-decoration: none;
+  margin: 1em;
 }
-main .card-container .summary-box .payment a:hover {
+main .card-container .summary-box .payment > a:hover {
   color: hsl(223deg, 47%, 23%);
 }/*# sourceMappingURL=main.css.map */
