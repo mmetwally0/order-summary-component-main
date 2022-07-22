@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hsl(225deg, 100%, 94%);
+  font-family: "Red Hat Display", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+html .background-pattern-desktop,
+body .background-pattern-desktop {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+  display: none;
+}
+@media (min-width: 850px) {
+  html .background-pattern-desktop,
+body .background-pattern-desktop {
+    display: block;
+  }
+}
+html .background-pattern-mobile,
+body .background-pattern-mobile {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+@media (min-width: 850px) {
+  html .background-pattern-mobile,
+body .background-pattern-mobile {
+    display: none;
+  }
+}
+
+main .card-container {
+  background-color: white;
+  width: 350px;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: auto 2fr;
+  grid-template-areas: "" "image text";
+  border-radius: 15px;
+}
+main .card-container .image-box img {
+  width: 350px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+main .card-container .summary-box {
+  padding: 0 1em 1em;
+  text-align: center;
+}
+main .card-container .summary-box .summary h1 {
+  color: hsl(223deg, 47%, 23%);
+  font-weight: 900;
+  font-size: 1.7em;
+}
+main .card-container .summary-box .summary p {
+  color: hsl(224deg, 23%, 55%);
+  padding: 0.4em 1.5em;
+}
+main .card-container .summary-box .payment {
+  width: 100%;
+}
+main .card-container .summary-box .payment .plan-details {
+  background-color: hsl(225deg, 100%, 98%);
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+main .card-container .summary-box .payment .plan-details .price {
+  margin-left: 1.5em;
+}
+main .card-container .summary-box .payment .plan-details .price h3 {
+  margin: 0;
+  font-weight: 900;
+  color: hsl(223deg, 47%, 23%);
+  text-align: start;
+  font-size: 1em;
+}
+main .card-container .summary-box .payment .plan-details .price p {
+  margin: 0;
+  color: hsl(224deg, 23%, 55%);
+  text-align: start;
+  font-size: 1em;
+}
+main .card-container .summary-box .payment .plan-details a {
+  margin-left: auto;
+  font-weight: 700;
+  color: hsl(245deg, 75%, 52%);
+  text-decoration: underline;
+}
+main .card-container .summary-box .payment .plan-details a:hover {
+  color: hsl(245deg, 83%, 68%);
+}
+main .card-container .summary-box .payment .payment-btn {
+  background-color: hsl(245deg, 75%, 52%);
+  padding: 1em;
+  border-radius: 15px;
+  margin: 2em 0;
+  box-shadow: 0px 10px 15px 7px hsl(225deg, 100%, 94%);
+}
+main .card-container .summary-box .payment .payment-btn a {
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+}
+main .card-container .summary-box .payment .payment-btn:hover {
+  background-color: hsl(245deg, 83%, 68%);
+}
+main .card-container .summary-box .payment a {
+  color: hsl(224deg, 23%, 55%);
+  font-weight: 900;
+  text-decoration: none;
+}
+main .card-container .summary-box .payment a:hover {
+  color: hsl(223deg, 47%, 23%);
+}/*# sourceMappingURL=main.css.map */
